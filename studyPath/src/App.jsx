@@ -1,4 +1,6 @@
 import { useState } from 'react'
+
+import Hero from './components/Hero'
 import './App.css'
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
 
   return (
     <>
-    <h1 className='bg-red-300'>hello</h1>
+<Hero/>
     </>
   )
 }

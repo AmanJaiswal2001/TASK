@@ -1,28 +1,61 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
-const Nav = () => {
-const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Nav = () => 
+{
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-const handleMenuToggle = () => {
-  setIsMenuOpen(!isMenuOpen);
-};
+  useEffect(() => 
+  {
+    const handleScroll = () => 
+    {
+      if(window.scrollY > 200)
+      {
+        setIsScrolled(true);
+      }
+      else
+      {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => 
+    {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, 
+  []);
+
+  const handleMenuToggle = () => 
+  {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div 
-    id='mainNav'
-    className='bg-orange-300'>
+    id='main'
+    className=''>
 
-      <div className='w-screen h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8'>
+<div 
+  id='nav'
+  className={`w-full max-w-full h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8 fixed ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
+>
+
+
+{/* 'w-screen h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8 fixed bg-transpa' */}
         
         <div
-        id='logo'
-        className='w-[15%] h-[10vh] flex justify-center items-center bg-orange-400'>
-          <h1>Logo Here</h1>
+        id='logo'>
+          <h1 className={`text-sm font-mono px-4 py-2 border-2 
+          ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
+          StudyPathFinder.</h1>
+
         </div>
 
         <div 
         id="infoPanel"
-        className='w-[50%] h-[50%] bg-orange-400 text-white  justify-around items-center rounded-full hidden md:flex'>
+        className={`w-[50%] h-[50%] justify-around items-center rounded-full hidden md:flex border-2 
+          ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
           <a href="" className='hover:underline'>Home</a>
           <a href="" className='hover:underline'>About Us</a>
           <a href="" className='hover:underline'>Our Services</a>
@@ -31,7 +64,8 @@ const handleMenuToggle = () => {
 
         <div 
         id="account"
-        className='w-[20%] h-[50%] bg-orange-400 text-white justify-around items-center rounded-full hidden md:flex'>
+        className={`w-[20%] h-[50%] border-2 justify-around items-center rounded-full hidden md:flex 
+        ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
           <a href="" className='hover:underline'>Log-in</a>
           <a href="" className='hover:underline'>Sign-up</a>
         </div>
@@ -44,15 +78,15 @@ const handleMenuToggle = () => {
       </div>
     
 
-    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-orange-300 text-white p-4`}>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Home</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>About Us</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Our Services</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Contact Us</a>
+    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-black text-white p-4 fixed top-[15vh] w-full`}>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Home</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>About Us</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Our Services</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Contact Us</a>
 
       <div>
-        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Login</a>
-        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Sign Up</a>
+        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Login</a>
+        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Sign Up</a>
       </div>
     </div>
   </div>

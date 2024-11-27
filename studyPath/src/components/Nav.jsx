@@ -1,9 +1,9 @@
-import React, {useState, useEffect}, { useState } from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 const Nav = () => 
 {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => 
@@ -37,9 +37,9 @@ const Nav = () =>
 // };
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 // const [isDarkMode, setIsDarkMode] = useState(false);
-const handleMenuToggle = () => {
-  setIsMenuOpen(!isMenuOpen);
-};
+// const handleMenuToggle = () => {
+//   setIsMenuOpen(!isMenuOpen);
+// };
 
 // const toggleDarkMode = () => {
 //   setIsDarkMode(!isDarkMode);
@@ -69,7 +69,7 @@ const handleMenuToggle = () => {
         id="infoPanel"
         className={`w-[50%] h-[50%] justify-around items-center rounded-full hidden md:flex border-2 
           ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
-          <a href="" className='hover:underline'>Home</a>
+          <a href="/" className='hover:underline'>Home</a>
           <a href="" className='hover:underline'>About Us</a>
           <a href="" className='hover:underline'>Our Services</a>
           <a href="" className='hover:underline'>Contact Us</a>
@@ -79,8 +79,8 @@ const handleMenuToggle = () => {
         id="account"
         className={`w-[20%] h-[50%] border-2 justify-around items-center rounded-full hidden md:flex 
         ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
-          <a href="" className='hover:underline'>Log-in</a>
-          <a href="" className='hover:underline'>Sign-up</a>
+          <Link to="/login" className='hover:underline'>Log-in</Link>
+          <Link to="/signin" className='hover:underline'>Sign-up</Link>
         </div>
 
         <button

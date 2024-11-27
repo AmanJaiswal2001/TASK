@@ -10,8 +10,8 @@ import Footer from "./components/Footer"
 import './App.css';
 // import Nav from "./components/Nav"
 // import Footer from "./components/Footer"
-// import About from "./pages/About";
-// import FAQ from "./pages/FAQ";
+ import About from "./pages/About";
+ import FAQ from "./pages/FAQ";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,8 +27,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         {/* <Route path="/nav" element={<Nav/>} /> */}
         <Route path="/footer" element={<Footer/>} />
-        {/* <Route path="/about" element={<About/>} /> */}
-        {/* <Route path="/faq" element={<FAQ/>} /> */}
+        <Route path="/about" element={<About/>} />
+        <Route path="/faq" element={<FAQ/>} />
       </Routes>
     <Footer/>    </>
   );

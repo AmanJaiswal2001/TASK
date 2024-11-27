@@ -16,8 +16,8 @@ return (
 
 
 
-<div className='flex justify-center mt-5'>
-<div className='flex flex-col w-1/2 p-10 gap-5 '>
+<div className='flex justify-center  md:flex-row flex-col-reverse  mt-5'>
+<div className='flex flex-col md:w-1/2 md:p-10 gap-5 p-5'>
   
     <label className='text-2xl font-semibold'>Email:</label>
    <input type='text'
@@ -38,7 +38,7 @@ return (
     
    
 
-<button className=' mt-4 w-80 bg-blue-800 p-4 m-auto rounded-xl text-2xl text-white'>Login</button>
+<button className=' mt-4 md:w-80 w-40 bg-blue-800 p-4 m-auto  rounded-full md:rounded-xl text-2xl text-white'>Login</button>
 
 
 <Link to="/signin">

@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect}, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Nav = () => 
 {
@@ -30,6 +31,15 @@ const Nav = () =>
   {
     setIsMenuOpen(!isMenuOpen);
   };
+
+// const toggleDarkMode = () => {
+//   setIsDarkMode(!isDarkMode);
+// };
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+// const [isDarkMode, setIsDarkMode] = useState(false);
+const handleMenuToggle = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
 
 // const toggleDarkMode = () => {
 //   setIsDarkMode(!isDarkMode);

@@ -16,8 +16,8 @@ return (
 
 
 
-<div className='flex justify-center mt-5'>
-<div className='flex flex-col w-1/2 p-10 gap-5 '>
+<div className=' md:justify-center flex md:flex-row flex-col-reverse   mt-5'>
+<div className='flex flex-col md:w-1/2 md:p-10 md:gap-5 p-5 gap-2 '>
    <label className='text-2xl font-semibold'>Name:</label>
    <input type='text'
     className='p-4 outline outline-blue-900  '
@@ -52,7 +52,7 @@ return (
    />
    
 
-<button className=' mt-4 w-80 bg-blue-800 p-4 m-auto rounded-xl text-2xl text-white'>Signin</button>
+<button className=' mt-4 md:w-80 w-40 bg-blue-800 p-4 m-auto  rounded-full  md:rounded-xl text-lg md:text-2xl text-white'>Signin</button>
 
 
 <Link to="/login">
@@ -65,7 +65,7 @@ return (
 <div className='flex justify-end'>
    
     <img 
-    className='rounded-full'
+    className='md:rounded-full '
     src="https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo="/>
 </div>
 

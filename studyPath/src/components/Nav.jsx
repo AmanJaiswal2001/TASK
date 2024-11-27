@@ -1,48 +1,76 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
 
-const Nav = () => {
-const [isMenuOpen, setIsMenuOpen] = useState(false);
-// const [isDarkMode, setIsDarkMode] = useState(false);
-const handleMenuToggle = () => {
-  setIsMenuOpen(!isMenuOpen);
-};
+const Nav = () => 
+{
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => 
+  {
+    const handleScroll = () => 
+    {
+      if(window.scrollY > 200)
+      {
+        setIsScrolled(true);
+      }
+      else
+      {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => 
+    {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, 
+  []);
+
+  const handleMenuToggle = () => 
+  {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
 // const toggleDarkMode = () => {
 //   setIsDarkMode(!isDarkMode);
 // };
   return (
     <div 
-    id='mainNav'
-    className='bg-orange-300'>
-    {/* // className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-orange-300 text-black'}`}
-    > */}
-      <div className='w-screen h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8'>
+    id='main'
+    className=''>
+
+<div 
+  id='nav'
+  className={`w-full max-w-full h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8 fixed ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
+>
+
+
+{/* 'w-screen h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8 fixed bg-transpa' */}
         
         <div
-        id='logo'
-        className='w-[15%] h-[10vh] flex justify-center items-center bg-orange-400'>
-          <h1>Logo Here</h1>
-          
- {/* <img className='w-320 h-20'
-        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYItTe-nLKfZn5_H4u1_q2AXe9Fh8ADPJIg&s'/>
-       */}
+        id='logo'>
+          <h1 className={`text-sm font-mono px-4 py-2 border-2 
+          ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
+          StudyPathFinder.</h1>
+
         </div>
 
         <div 
         id="infoPanel"
-        className='w-[50%] h-[50%] bg-orange-400 text-white  justify-around items-center rounded-full hidden md:flex'>
-          <Link to="/" className='hover:underline'>Home</Link>
-          <Link to="" className='hover:underline'>About Us</Link>
-          <Link to="" className='hover:underline'>Our Services</Link>
-          <Link to="" className='hover:underline'>Contact Us</Link>
+        className={`w-[50%] h-[50%] justify-around items-center rounded-full hidden md:flex border-2 
+          ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
+          <a href="" className='hover:underline'>Home</a>
+          <a href="" className='hover:underline'>About Us</a>
+          <a href="" className='hover:underline'>Our Services</a>
+          <a href="" className='hover:underline'>Contact Us</a>
         </div>
 
         <div 
         id="account"
-        className='w-[20%] h-[50%] bg-orange-400 text-white justify-around items-center rounded-full hidden md:flex'>
-          <Link to="/login" className='hover:underline'>Log-in</Link>
-          <Link to="/signin" className='hover:underline'>Sign-up</Link>
+        className={`w-[20%] h-[50%] border-2 justify-around items-center rounded-full hidden md:flex 
+        ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
+          <a href="" className='hover:underline'>Log-in</a>
+          <a href="" className='hover:underline'>Sign-up</a>
         </div>
 
         <button
@@ -60,15 +88,15 @@ const handleMenuToggle = () => {
       </div>
     
 
-    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-orange-300 text-white p-4`}>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Home</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>About Us</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Our Services</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Contact Us</a>
+    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-black text-white p-4 fixed top-[15vh] w-full`}>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Home</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>About Us</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Our Services</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Contact Us</a>
 
       <div>
-        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Login</a>
-        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full bg-orange-400'>Sign Up</a>
+        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Login</a>
+        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Sign Up</a>
       </div>
     </div>
   </div>

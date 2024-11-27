@@ -8,10 +8,10 @@ import Hero from './components/Hero';
 import Nav from './components/Nav'
 import Footer from "./components/Footer"
 import './App.css';
-import Nav from "./components/Nav"
-import Footer from "./components/Footer"
-import About from "./pages/About";
-import FAQ from "./pages/FAQ";
+// import Nav from "./components/Nav"
+// import Footer from "./components/Footer"
+// import About from "./pages/About";
+// import FAQ from "./pages/FAQ";
 
 function App() {
   const [count, setCount] = useState(0)

@@ -14,6 +14,8 @@ app.use(express.json());
 
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/academics", require("./routes/academicsRoutes"));
+app.use("/api/signup", require("./routes/signupRoutes"));
+
 
 const PORT = process.env.PORT || 5000;
 

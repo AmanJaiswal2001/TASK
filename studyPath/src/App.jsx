@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import ContactForm from "./components/ContactUs/ContactForm";
-import Hero from './components/Hero';
+import Home from './components/Home';
+import Academics from './components/Academics/Academics';
 import { Routes,Route } from 'react-router-dom'
 import Signin from './components/Signin'
 import Login from './components/Login'
@@ -22,13 +23,14 @@ function App() {
       {/* <Footer /> */}
 
 <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/nav" element={<Nav/>} /> */}
         <Route path="/footer" element={<Footer/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/faq" element={<FAQ/>} />
+        <Route path="/Academics" element={<Academics />} />
       </Routes>
     <Footer/>    </>
   );

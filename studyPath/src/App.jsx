@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Home from './components/Home';
 import Academics from './components/Academics/Academics';
 import { Routes,Route } from 'react-router-dom'
-import Signin from './components/Signin'
-import Login from './components/Login'
+// import Signin from './components/Signin'
+// import Login from './components/Login'
 import Nav from './components/Nav'
 import Footer from "./components/Footer"
 import Signin from './components/Users/Register';

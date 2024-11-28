@@ -73,6 +73,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
           <a href="" className='hover:underline'>About Us</a>
           <a href="" className='hover:underline'>Our Services</a>
           <a href="" className='hover:underline'>Contact Us</a>
+          <a href="" className='hover:underline'>FAQs</a>
         </div>
 
         <div 
@@ -103,6 +104,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
       <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>About Us</a>
       <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Our Services</a>
       <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Contact Us</a>
+      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>FAQs</a>
 
       <div>
         <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Login</a>

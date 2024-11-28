@@ -51,7 +51,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 <div 
   id='nav'
-  className={`w-full max-w-full h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8 fixed ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
+  className={`w-full max-w-full h-[15vh] md:h-[15vh] flex justify-between z-50 items-center px-4 md:px-8 fixed ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
 >
 
 
@@ -59,9 +59,9 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         
         <div
         id='logo'>
-          <h1 className={`text-sm font-mono px-4 py-2 border-2 
+          <h1 className={`text-sm font-mono px-4 py-2 border-2
           ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
-          StudyPathFinder.</h1>
+          StudyPathFinder<span className='animate-ping'>_</span></h1>
 
         </div>
 
@@ -98,7 +98,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
       </div>
     
 
-    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-black text-white p-4 fixed top-[15vh] w-full`}>
+    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} z-50 bg-black text-white p-4 fixed top-[15vh] w-full`}>
       <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Home</a>
       <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>About Us</a>
       <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Our Services</a>

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div
       id="main"
-      className="w-screen h-[20vh] bg-black text-white flex justify-around items-center flex-wrap">
+      className="w-screen h-[20vh] bg-black text-white flex justify-around items-center flex-wrap mt-5">
       <a href="" className="hover:underline">Home</a>
       <a href="" className="hover:underline">About Us</a>
       <a href="" className="hover:underline">Products</a>

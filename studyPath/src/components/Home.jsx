@@ -22,9 +22,24 @@ function Home() {
 
     return (
         <>
+            <div
+            className="relative">
+
             <img src="https://img.freepik.com/premium-photo/back-school-school-supplies-apple-yellow-background-layout-school-accessories-distance-learning_215990-1234.jpg?w=826" alt="Background"
-                className=" w-full h-[450px] object-cover mb-10 md:mb-10"
+                className="w-full h-[450px] object-cover mb-10 md:mb-10"
             />
+
+            <div 
+            id="text"
+            className="absolute top-1/3 left-5 pt-11 sm:left-10 sm:pt-0 flex justify-center items-center text-black font-sans font-bold text-xl sm:text-5xl">
+                <p>Welcome To
+                <br /><span className="font-mono text-white">StudyPathFinder
+                <span className="animate-ping">_</span></span>
+                <br />
+               One Stop Destination for Personalized <br />Course Recommendations!</p>
+            </div>
+
+            </div>
 
             <p className="text-center underline text-3xl font-bold">Explore our top resources to enhance your skills and achieve your goals!</p>
             <div className="flex flex-wrap gap-14 py-4 md:py-8 lg:py-10 justify-center">

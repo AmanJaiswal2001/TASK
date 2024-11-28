@@ -3,12 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContactForm from "./components/ContactUs/ContactForm";
 import Home from './components/Home';
 import Academics from './components/Academics/Academics';
-<<<<<<< Updated upstream
-=======
 import Signin from './components/Users/Register';
 import Login from './components/Users/Login';
-
->>>>>>> Stashed changes
 import './App.css';
 
 function App() {

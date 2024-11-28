@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import loading from './img/loading__.gif';
+// import loading from './img/loading__.gif';
 
 function Academics() {
   const [academics, setAcademics] = useState([]);

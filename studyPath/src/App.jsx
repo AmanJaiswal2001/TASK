@@ -8,6 +8,8 @@ import Signin from './components/Signin'
 import Login from './components/Login'
 import Nav from './components/Nav'
 import Footer from "./components/Footer"
+import Signin from './components/Users/Register';
+import Login from './components/Users/Login';
 import './App.css';
 // import Nav from "./components/Nav"
 // import Footer from "./components/Footer"
@@ -31,6 +33,8 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/faq" element={<FAQ/>} />
         <Route path="/Academics" element={<Academics />} />
+        <Route path="/signup" element={<Signin />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     <Footer/>    </>
   );

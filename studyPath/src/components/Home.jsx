@@ -42,9 +42,9 @@ function Home() {
             </div>
 
             <p className="text-center underline text-3xl font-bold">Explore our top resources to enhance your skills and achieve your goals!</p>
-            <div className="flex flex-wrap gap-14 py-4 md:py-8 lg:py-10 justify-center">
+            <div className="flex flex-wrap md:gap-14 py-4 md:py-8 lg:py-10 justify-center">
                 {displayedAcademics.map((academic, index) => (
-                    <div key={index} className="w-full sm:w-[300px] md:w-[350px] lg:w-[300px] bg-slate-500 rounded-3xl shadow-2xl overflow-hidden">
+                    <div key={index} className="w-full sm:w-[300px] md:w-[350px] lg:w-[300px] m-5 md:m-0 bg-slate-500 rounded-3xl shadow-2xl overflow-hidden">
                         <a href={academic.website || "#"} className="group block relative">
                             <img
                                 src={academic.image?.url || geek}

@@ -14,10 +14,12 @@ app.use(express.json());
 
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/academics", require("./routes/academicsRoutes"));
+app.use("/api/signup", require("./routes/signupRoutes"));
+app.use("/api/login", require("./routes/loginRoutes"));
+
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log("Testing");
 });
